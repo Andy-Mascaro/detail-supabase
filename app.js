@@ -1,8 +1,15 @@
-// import functions and grab DOM elements
+import { getDogs } from './fetch-utils.js';
+import { renderDogCard } from './render-utils.js';
 
-// let state
+const main = document.getElementById('dog-list-container');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+window.addEventListener('load', async() => {
+    const dogs = await getDogs();
+
+    for (let dog of dogs) {
+        const dogDiv = renderDogCard(dog);
+        main.append(dogDiv);
+    
+    }
+
+});
