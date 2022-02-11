@@ -7,7 +7,7 @@ export function renderSodaCard(soda) {
     div.classList.add('soda-card');
 
     p.textContent = soda.name;
-    img.src = `./assets/${soda.name}.jpeg`;
+    img.src = `./assets/${soda.id}.jpeg`;
     a.href = `./soda/?id=${soda.id}`;
      // link to the dog's detail page here
     
@@ -25,7 +25,7 @@ export function renderSodaDetail(soda) {
     const nameEl = document.createElement('p');
     const sugarEl = document.createElement('p');
     const caloriesEl = document.createElement('p');
-    const caloriesAndSugarEl = document.createElement('div');
+    // const caloriesAndSugarEl = document.createElement('div');
 
     div.classList.add('soda-detail');
 
@@ -35,19 +35,19 @@ export function renderSodaDetail(soda) {
     descriptionEl.textContent = soda.description;
     descriptionEl.classList.add('description');
 
-    caloriesEl.textContent = `${soda.calories} has`;    
+    caloriesEl.textContent = `${soda.calories} calories`;    
     caloriesEl.classList.add('calories');
 
     sugarEl.textContent = soda.sugar;
-    sugarEl.classList.add('breed');
+    sugarEl.classList.add('sugar');
 
-    caloriesAndSugarEl.classList.add('calories-and-sugar');
+    // caloriesAndSugarEl.classList.add('calories-and-sugar');
 
-    caloriesAndSugarEl.append(caloriesEl, sugarEl);
+    // caloriesAndSugarEl.append(caloriesEl, sugarEl);
 
-    img.src = `../assets/${soda.name}.jpeg`;
+    img.src = `../assets/${soda.id}.jpeg`;
     
-    div.append(nameEl, img, caloriesAndSugarEl, descriptionEl);
+    div.append(nameEl, img, caloriesEl, sugarEl, descriptionEl);
 
     return div;
 

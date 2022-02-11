@@ -11,10 +11,11 @@ window.addEventListener('load', async() =>{
     const id = params.get('id');
 
     const soda = await getSoda(id);
+
     const sodaDetails = renderSodaDetail(soda);
     sodaDetailContainer.append(sodaDetails);
 
-
+    
     
 
 });
