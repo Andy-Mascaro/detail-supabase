@@ -4,7 +4,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getSodas() {
-    const resp = await client.form('sodas').select('*');
+    const resp = await client.from('sodas').select('*');
     return checkError(resp);
 
 }
