@@ -1,8 +1,15 @@
-// import functions and grab DOM elements
+import { getSodas } from './fetch-utils.js';
+import { renderSodaCard } from './render-utils.js';
 
-// let state
+const main = document.getElementById('soda-list-container');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+window.addEventListener('load', async() => {
+    const sodas = await getSodas();
+
+    for (let soda of sodas) {
+        const sodaDiv = renderSodaCard(soda);
+        main.append(sodaDiv);
+    
+    }
+
+});
