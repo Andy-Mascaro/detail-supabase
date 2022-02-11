@@ -1,14 +1,14 @@
-import { getDogs } from './fetch-utils.js';
-import { renderDogCard } from './render-utils.js';
+import { getSoda } from './fetch-utils.js';
+import { renderSodaCard } from './render-utils.js';
 
-const main = document.getElementById('dog-list-container');
+const main = document.getElementById('soda-list-container');
 
 window.addEventListener('load', async() => {
-    const dogs = await getDogs();
+    const sodas = await getSoda();
 
-    for (let dog of dogs) {
-        const dogDiv = renderDogCard(dog);
-        main.append(dogDiv);
+    for (let soda of sodas) {
+        const sodaDiv = renderSodaCard(soda);
+        main.append(sodaDiv);
     
     }
 

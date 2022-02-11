@@ -8,7 +8,7 @@ export function renderSodaCard(soda) {
 
     p.textContent = soda.name;
     img.src = `./assets/${soda.name}.jpeg`;
-    a.href = `./detail/?id=${soda.id}`;
+    a.href = `./soda/?id=${soda.id}`;
      // link to the dog's detail page here
     
     div.append(p, img);
